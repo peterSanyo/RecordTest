@@ -15,28 +15,56 @@ struct ContentView: View {
         VStack {
             if audioRecorder.hasRecordingPermission {
                 Button {
-                    audioRecorder.isRecording ? audioRecorder.stopRecording() : audioRecorder.startRecording()
+                    if audioRecorder.isRecording {
+                        audioRecorder.stopRecording()
+                        audioRecorder.stopTimer()
+                    } else {
+                        audioRecorder.startRecording()
+                        audioRecorder.startTimer()
+                    }
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: audioRecorder.isRecording ? 10 : 500)
                             .strokeBorder(.white)
-                        
-                        RoundedRectangle(cornerRadius: audioRecorder.isRecording ? 10 : 500)
-                            .fill(Color.red)
-                            .padding(4)
+
+                        Text(audioRecorder.isRecording ? "Stop (\(Int(audioRecorder.recordingTime)))" : "Record")
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.red)
+                            .cornerRadius(10)
                     }
                 }
             } else {
-                // UI when permissions are not granted
                 Text("Recording permissions not granted. Please enable them in settings.")
             }
 
-            // ... rest of your UI ...
+            List {
+                ForEach(audioRecorder.recordings, id: \.self) { recording in
+                    HStack {
+                        Text(recording.lastPathComponent)
+                        Spacer()
+                        Button(action: {
+                            audioRecorder.playRecording(url: recording)
+                        }) {
+                            Image(systemName: "play.circle")
+                        }
+                    }
+                }
+                .onDelete(perform: delete)
+            }
         }
-        .padding(16)
+        .padding(4)
         .onAppear {
             audioRecorder.setupAudioSession()
         }
+    }
+
+    func delete(at offsets: IndexSet) {
+        for index in offsets {
+            let recording = audioRecorder.recordings[index]
+            try? FileManager.default.removeItem(at: recording)
+        }
+        audioRecorder.recordings.remove(atOffsets: offsets)
     }
 }
 
