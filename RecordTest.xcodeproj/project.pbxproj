@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45DEBE5E2B3F727100003B71 /* RecordTest Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 45DEBE5D2B3F727100003B71 /* RecordTest Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		45DEBE632B3F727100003B71 /* RecordTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEBE622B3F727100003B71 /* RecordTestApp.swift */; };
+		45DEBE652B3F727100003B71 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEBE642B3F727100003B71 /* ContentView.swift */; };
+		45DEBE672B3F727200003B71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45DEBE662B3F727200003B71 /* Assets.xcassets */; };
+		45DEBE6A2B3F727200003B71 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45DEBE692B3F727200003B71 /* Preview Assets.xcassets */; };
+		45DEBE752B3F72F900003B71 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEBE742B3F72F900003B71 /* AudioRecorder.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		45DEBE5F2B3F727100003B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45DEBE512B3F727100003B71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45DEBE5C2B3F727100003B71;
+			remoteInfo = "RecordTest Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		45DEBE702B3F727200003B71 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				45DEBE5E2B3F727100003B71 /* RecordTest Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		45DEBE572B3F727100003B71 /* RecordTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45DEBE5D2B3F727100003B71 /* RecordTest Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RecordTest Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45DEBE622B3F727100003B71 /* RecordTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTestApp.swift; sourceTree = "<group>"; };
+		45DEBE642B3F727100003B71 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		45DEBE662B3F727200003B71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		45DEBE692B3F727200003B71 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		45DEBE742B3F72F900003B71 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45DEBE5A2B3F727100003B71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45DEBE502B3F727100003B71 = {
+			isa = PBXGroup;
+			children = (
+				45DEBE612B3F727100003B71 /* RecordTest Watch App */,
+				45DEBE582B3F727100003B71 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		45DEBE582B3F727100003B71 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45DEBE572B3F727100003B71 /* RecordTest.app */,
+				45DEBE5D2B3F727100003B71 /* RecordTest Watch App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45DEBE612B3F727100003B71 /* RecordTest Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				45DEBE622B3F727100003B71 /* RecordTestApp.swift */,
+				45DEBE642B3F727100003B71 /* ContentView.swift */,
+				45DEBE742B3F72F900003B71 /* AudioRecorder.swift */,
+				45DEBE662B3F727200003B71 /* Assets.xcassets */,
+				45DEBE682B3F727200003B71 /* Preview Content */,
+			);
+			path = "RecordTest Watch App";
+			sourceTree = "<group>";
+		};
+		45DEBE682B3F727200003B71 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				45DEBE692B3F727200003B71 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		45DEBE562B3F727100003B71 /* RecordTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45DEBE712B3F727200003B71 /* Build configuration list for PBXNativeTarget "RecordTest" */;
+			buildPhases = (
+				45DEBE552B3F727100003B71 /* Resources */,
+				45DEBE702B3F727200003B71 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45DEBE602B3F727100003B71 /* PBXTargetDependency */,
+			);
+			name = RecordTest;
+			productName = RecordTest;
+			productReference = 45DEBE572B3F727100003B71 /* RecordTest.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		45DEBE5C2B3F727100003B71 /* RecordTest Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45DEBE6D2B3F727200003B71 /* Build configuration list for PBXNativeTarget "RecordTest Watch App" */;
+			buildPhases = (
+				45DEBE592B3F727100003B71 /* Sources */,
+				45DEBE5A2B3F727100003B71 /* Frameworks */,
+				45DEBE5B2B3F727100003B71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RecordTest Watch App";
+			productName = "RecordTest Watch App";
+			productReference = 45DEBE5D2B3F727100003B71 /* RecordTest Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45DEBE512B3F727100003B71 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					45DEBE562B3F727100003B71 = {
+						CreatedOnToolsVersion = 15.1;
+					};
+					45DEBE5C2B3F727100003B71 = {
+						CreatedOnToolsVersion = 15.1;
+					};
+				};
+			};
+			buildConfigurationList = 45DEBE542B3F727100003B71 /* Build configuration list for PBXProject "RecordTest" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 45DEBE502B3F727100003B71;
+			productRefGroup = 45DEBE582B3F727100003B71 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45DEBE562B3F727100003B71 /* RecordTest */,
+				45DEBE5C2B3F727100003B71 /* RecordTest Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		45DEBE552B3F727100003B71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45DEBE5B2B3F727100003B71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45DEBE6A2B3F727200003B71 /* Preview Assets.xcassets in Resources */,
+				45DEBE672B3F727200003B71 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45DEBE592B3F727100003B71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45DEBE752B3F72F900003B71 /* AudioRecorder.swift in Sources */,
+				45DEBE652B3F727100003B71 /* ContentView.swift in Sources */,
+				45DEBE632B3F727100003B71 /* RecordTestApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45DEBE602B3F727100003B71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45DEBE5C2B3F727100003B71 /* RecordTest Watch App */;
+			targetProxy = 45DEBE5F2B3F727100003B71 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		45DEBE6B2B3F727200003B71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		45DEBE6C2B3F727200003B71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		45DEBE6E2B3F727200003B71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RecordTest Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = S98C3BL8SB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = RecordTest;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = PeterSanyo.RecordTest.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		45DEBE6F2B3F727200003B71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RecordTest Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = S98C3BL8SB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = RecordTest;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = PeterSanyo.RecordTest.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		45DEBE722B3F727200003B71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S98C3BL8SB;
+				INFOPLIST_KEY_CFBundleDisplayName = RecordTest;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = PeterSanyo.RecordTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		45DEBE732B3F727200003B71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S98C3BL8SB;
+				INFOPLIST_KEY_CFBundleDisplayName = RecordTest;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = PeterSanyo.RecordTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45DEBE542B3F727100003B71 /* Build configuration list for PBXProject "RecordTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45DEBE6B2B3F727200003B71 /* Debug */,
+				45DEBE6C2B3F727200003B71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45DEBE6D2B3F727200003B71 /* Build configuration list for PBXNativeTarget "RecordTest Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45DEBE6E2B3F727200003B71 /* Debug */,
+				45DEBE6F2B3F727200003B71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45DEBE712B3F727200003B71 /* Build configuration list for PBXNativeTarget "RecordTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45DEBE722B3F727200003B71 /* Debug */,
+				45DEBE732B3F727200003B71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 45DEBE512B3F727100003B71 /* Project object */;
+}
