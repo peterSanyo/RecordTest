@@ -5,14 +5,15 @@
 //  Created by Péter Sanyó on 29.12.23.
 //
 
-import Foundation
-import Foundation
 import AVFoundation
+import WatchKit
+import SwiftUI
 
 class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate {
     var audioRecorder: AVAudioRecorder?
     let audioSession = AVAudioSession.sharedInstance()
     
+    @Published var hasRecordingPermission: Bool = false
     @Published var isRecording = false
     
     override init() {
@@ -21,21 +22,19 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate {
     }
     
     func setupAudioSession() {
-        do {
-            try audioSession.setCategory(.playAndRecord, mode: .voiceChat)
-            try audioSession.setActive(true)
-            audioSession.requestRecordPermission() { allowed in
-                DispatchQueue.main.async {
-                    if !allowed {
-                        // Inform the user that they need to enable permissions
+            do {
+                try audioSession.setCategory(.playAndRecord, mode: .voiceChat)
+                try audioSession.setActive(true)
+                AVAudioApplication.requestRecordPermission { [weak self] granted in
+                    DispatchQueue.main.async {
+                        self?.hasRecordingPermission = granted
                     }
                 }
+            } catch {
+                print("Audio session setup failed: \(error)")
             }
-        } catch {
-            print("Audio session setup failed: \(error)")
         }
-    }
-    
+
     func startRecording() {
         let audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
         
@@ -50,7 +49,9 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate {
             audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
             audioRecorder?.delegate = self
             audioRecorder?.record()
-            isRecording = true
+            withAnimation {
+                isRecording = true
+            }
         } catch {
             print("Could not start recording: \(error)")
         }
@@ -58,7 +59,9 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate {
     
     func stopRecording() {
         audioRecorder?.stop()
-        isRecording = false
+        withAnimation {
+            isRecording = false
+        }
     }
     
     func getDocumentsDirectory() -> URL {
