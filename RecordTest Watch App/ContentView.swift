@@ -24,9 +24,6 @@ struct ContentView: View {
                     }
                 } label: {
                     ZStack {
-                        RoundedRectangle(cornerRadius: audioRecorder.isRecording ? 10 : 500)
-                            .strokeBorder(.white)
-
                         Text(audioRecorder.isRecording ? "Stop (\(Int(audioRecorder.recordingTime)))" : "Record")
                             .foregroundColor(.white)
                             .padding()
@@ -39,28 +36,27 @@ struct ContentView: View {
             }
 
             Divider()
-            
+
             List {
                 ForEach(audioRecorder.recordings, id: \.self) { recording in
-                    HStack {
-                        Text(recording.lastPathComponent)
-                        Spacer()
-                        Button(action: {
-                            audioRecorder.playRecording(url: recording)
-                        }) {
+                    Button {
+                        audioRecorder.playRecording(url: recording)
+                    } label: {
+                        HStack {
+                            Text(recording.lastPathComponent)
+                            Spacer()
                             Image(systemName: "play.circle")
                         }
                     }
                 }
                 .onDelete(perform: delete)
             }
-            
-            Spacer()
         }
         .padding(4)
         .onAppear {
             audioRecorder.setupAudioSession()
         }
+        .ignoresSafeArea()
     }
 
     func delete(at offsets: IndexSet) {

@@ -38,7 +38,7 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudi
     func setupAudioSession() {
         print("Setting up audio session")
         do {
-            try audioSession.setCategory(.playback, mode: .default)
+            try audioSession.setCategory(.playAndRecord, mode: .default)
             try audioSession.setActive(true)
             AVAudioApplication.requestRecordPermission { [weak self] granted in
                 DispatchQueue.main.async {
@@ -67,8 +67,10 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudi
             audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
             audioRecorder?.delegate = self
             audioRecorder?.record()
-            withAnimation {
-                isRecording = true
+            DispatchQueue.main.async {
+                withAnimation {
+                    self.isRecording = true
+                }
             }
             print("Recording started successfully")
         } catch {
@@ -84,8 +86,10 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudi
             print("Recording saved at \(url)")
         }
         audioRecorder?.stop()
-        withAnimation {
-            isRecording = false
+        DispatchQueue.main.async {
+            withAnimation {
+                self.isRecording = false
+            }
         }
         stopTimer()
     }
@@ -130,7 +134,11 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudi
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if !flag {
-            isRecording = false
+            DispatchQueue.main.async {
+                withAnimation {
+                    self.isRecording = false
+                }
+            }
             print("Recording did not finish successfully")
         } else {
             print("Recording finished successfully")
