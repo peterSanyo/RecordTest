@@ -38,7 +38,7 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudi
     func setupAudioSession() {
         print("Setting up audio session")
         do {
-            try audioSession.setCategory(.playAndRecord, mode: .voiceChat)
+            try audioSession.setCategory(.playback, mode: .default)
             try audioSession.setActive(true)
             AVAudioApplication.requestRecordPermission { [weak self] granted in
                 DispatchQueue.main.async {

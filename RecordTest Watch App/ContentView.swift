@@ -38,6 +38,8 @@ struct ContentView: View {
                 Text("Recording permissions not granted. Please enable them in settings.")
             }
 
+            Divider()
+            
             List {
                 ForEach(audioRecorder.recordings, id: \.self) { recording in
                     HStack {
@@ -52,6 +54,8 @@ struct ContentView: View {
                 }
                 .onDelete(perform: delete)
             }
+            
+            Spacer()
         }
         .padding(4)
         .onAppear {
