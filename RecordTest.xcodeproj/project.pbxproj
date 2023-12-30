@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4546F46B2B40CCAC00F36B3A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546F46A2B40CCAC00F36B3A /* HomeView.swift */; };
 		4546F46D2B40CD2B00F36B3A /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546F46C2B40CD2B00F36B3A /* ActionButton.swift */; };
+		4546F4712B40D69900F36B3A /* QualityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546F4702B40D69900F36B3A /* QualityPicker.swift */; };
 		45DEBE5E2B3F727100003B71 /* RecordTest Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 45DEBE5D2B3F727100003B71 /* RecordTest Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		45DEBE632B3F727100003B71 /* RecordTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEBE622B3F727100003B71 /* RecordTestApp.swift */; };
 		45DEBE652B3F727100003B71 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEBE642B3F727100003B71 /* ContentView.swift */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		4546F46A2B40CCAC00F36B3A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4546F46C2B40CD2B00F36B3A /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		4546F4702B40D69900F36B3A /* QualityPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualityPicker.swift; sourceTree = "<group>"; };
 		45DEBE572B3F727100003B71 /* RecordTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DEBE5D2B3F727100003B71 /* RecordTest Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RecordTest Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DEBE622B3F727100003B71 /* RecordTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTestApp.swift; sourceTree = "<group>"; };
@@ -77,8 +79,17 @@
 			children = (
 				4546F46A2B40CCAC00F36B3A /* HomeView.swift */,
 				4546F46C2B40CD2B00F36B3A /* ActionButton.swift */,
+				4546F4722B40D87900F36B3A /* QualityPicker */,
 			);
 			path = HomeView;
+			sourceTree = "<group>";
+		};
+		4546F4722B40D87900F36B3A /* QualityPicker */ = {
+			isa = PBXGroup;
+			children = (
+				4546F4702B40D69900F36B3A /* QualityPicker.swift */,
+			);
+			path = QualityPicker;
 			sourceTree = "<group>";
 		};
 		45DEBE502B3F727100003B71 = {
@@ -220,6 +231,7 @@
 				45DEBE752B3F72F900003B71 /* AudioRecorder.swift in Sources */,
 				4546F46B2B40CCAC00F36B3A /* HomeView.swift in Sources */,
 				45DEBE652B3F727100003B71 /* ContentView.swift in Sources */,
+				4546F4712B40D69900F36B3A /* QualityPicker.swift in Sources */,
 				45DEBE632B3F727100003B71 /* RecordTestApp.swift in Sources */,
 				4546F46D2B40CD2B00F36B3A /* ActionButton.swift in Sources */,
 			);

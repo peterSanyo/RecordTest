@@ -17,24 +17,28 @@ struct HomeView: View {
             VStack {
                 //            if audioRecorder.hasRecordingPermission {
                 ActionButton()
+                Divider()
+                QualityPicker()
                 //            } else {
                 //                Text("Recording permissions not granted. Please enable them in settings.")
                 //            }
 
                 Divider()
-
-                ForEach(audioRecorder.recordings, id: \.self) { recording in
-                    Button {
-                        audioRecorder.playRecording(url: recording)
-                    } label: {
-                        HStack {
-                            Text(recording.lastPathComponent)
-                            Spacer()
-                            Image(systemName: "play.circle")
+                
+                List {
+                    ForEach(audioRecorder.recordings, id: \.self) { recording in
+                        Button {
+                            audioRecorder.playRecording(url: recording)
+                        } label: {
+                            HStack {
+                                Text(recording.lastPathComponent)
+                                Spacer()
+                                Image(systemName: "play.circle")
+                            }
                         }
                     }
+                    .onDelete(perform: delete)
                 }
-                .onDelete(perform: delete)
             }
         }
         .navigationTitle("Record")

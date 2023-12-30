@@ -21,6 +21,8 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudi
     @Published var recordingTime: TimeInterval = 0
     var recordingTimer: Timer?
     
+    @Published var selectedQuality = AVAudioQuality.high.rawValue
+    
     override init() {
         super.init()
         print("Initializing AudioRecorder")
@@ -60,7 +62,7 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudi
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000,
             AVNumberOfChannelsKey: 1,
-            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+            AVEncoderAudioQualityKey: selectedQuality
         ]
         
         do {
