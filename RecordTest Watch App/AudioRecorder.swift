@@ -105,32 +105,6 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudi
             print("Playback failed: \(error.localizedDescription)")
         }
     }
-
-    func startTimer() {
-        print("Starting timer")
-        recordingTimer?.invalidate() // Invalidate any existing timer
-        recordingTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
-            self?.recordingTime += 1
-        }
-    }
-
-    func stopTimer() {
-        print("Stopping timer")
-        recordingTimer?.invalidate()
-        recordingTimer = nil
-        recordingTime = 0
-    }
-    
-    func randomString(length: Int) -> String {
-        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        return String((0..<length).map{ _ in letters.randomElement()! })
-    }
-
-    func getDocumentsDirectory() -> URL {
-        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        print("Documents directory: \(path)")
-        return path
-    }
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if !flag {
@@ -143,6 +117,34 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudi
         } else {
             print("Recording finished successfully")
         }
+    }
+    
+    // MARK: - Private Funcs
+
+    private func startTimer() {
+        print("Starting timer")
+        recordingTimer?.invalidate() // Invalidate any existing timer
+        recordingTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+            self?.recordingTime += 1
+        }
+    }
+
+    private func stopTimer() {
+        print("Stopping timer")
+        recordingTimer?.invalidate()
+        recordingTimer = nil
+        recordingTime = 0
+    }
+    
+    private func randomString(length: Int) -> String {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        return String((0..<length).map{ _ in letters.randomElement()! })
+    }
+
+    private func getDocumentsDirectory() -> URL {
+        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        print("Documents directory: \(path)")
+        return path
     }
     
     @objc func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
