@@ -35,9 +35,7 @@ struct ActionButton: View {
     var actionShape: some View {
         Group {
             if audioRecorder.isRecording {
-                Image(systemName: "square.fill")
-                    .controlSize(/*@START_MENU_TOKEN@*/.regular/*@END_MENU_TOKEN@*/)
-                    
+                Image(systemName: "square.fill")                    
             } else {
                 Image(systemName: "largecircle.fill.circle")
             }

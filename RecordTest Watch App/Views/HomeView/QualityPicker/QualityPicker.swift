@@ -11,20 +11,26 @@ import SwiftUI
 struct QualityPicker: View {
     @StateObject var audioRecorder = AudioRecorder()
     @State private var selection: String = "High"
-    
+
+    private let qualities = [
+        ("L", "Low", AVAudioQuality.low.rawValue),
+        ("M", "Medium", AVAudioQuality.medium.rawValue),
+        ("H", "High", AVAudioQuality.high.rawValue)
+    ]
+
     var body: some View {
         HStack {
-            QualityButton(title: "L", fullTitle: "Low", selection: $selection,  isRecording: $audioRecorder.isRecording) {
-                audioRecorder.selectedQuality = AVAudioQuality.low.rawValue
-            }
-            QualityButton(title: "M", fullTitle: "Medium", selection: $selection,  isRecording: $audioRecorder.isRecording) {
-                audioRecorder.selectedQuality = AVAudioQuality.medium.rawValue
-            }
-            QualityButton(title: "H", fullTitle: "High", selection: $selection,  isRecording: $audioRecorder.isRecording) {
-                audioRecorder.selectedQuality = AVAudioQuality.high.rawValue
+            ForEach(qualities, id: \.1) { quality in
+                QualityButton(
+                    title: quality.0,
+                    fullTitle: quality.1,
+                    selection: $selection,
+                    isRecording: $audioRecorder.isRecording)
+                {
+                    audioRecorder.selectedQuality = quality.2
+                }
             }
         }
-//        .frame(width: .infinity)
     }
 }
 
@@ -46,12 +52,12 @@ struct QualityButton: View {
                 Text(selection == fullTitle ? fullTitle : title)
             }
         }
-        .padding(.horizontal, 5)
         .disabled(isRecording)
+        .padding(.horizontal, 5)
         .buttonStyle(PlainButtonStyle())
         .padding()
         .background(selection == fullTitle ? Color.red : Color.gray)
-        .cornerRadius(88)
+        .cornerRadius(80)
     }
 }
 
