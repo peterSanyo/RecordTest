@@ -7,9 +7,10 @@
 
 import AVFoundation
 import SwiftUI
+import WatchKit
 
 struct QualityPicker: View {
-    @EnvironmentObject var audioRecorder: AudioRecorder
+    @ObservedObject var audioRecorder: AudioRecorder
     @State private var selection: String = "High"
 
     private let qualities = [
@@ -61,7 +62,6 @@ struct QualityButton: View {
     }
 }
 
-#Preview {
-    QualityPicker()
-        .environmentObject(AudioRecorder())
-}
+//#Preview {
+//    QualityPicker()
+//}

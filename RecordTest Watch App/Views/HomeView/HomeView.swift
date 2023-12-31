@@ -10,45 +10,46 @@ import SwiftUI
 import WatchKit
 
 struct HomeView: View {
-    @EnvironmentObject var audioRecorder: AudioRecorder
+    @StateObject var audioRecorder = AudioRecorder()
 
     var body: some View {
 //        if audioRecorder.hasRecordingPermission {
-        ScrollView {
-            VStack {
-                ActionButton()
-                Divider()
-                QualityPicker()
-                Divider()
-
-                if audioRecorder.recordings.isEmpty {
-                    Text("No recordings found")
-                        .foregroundColor(.secondary)
-                } else {
-                    List {
-                        ForEach(audioRecorder.recordings, id: \.self) { recording in
-                            Button {
-                                audioRecorder.playRecording(url: recording)
-                            } label: {
-                                HStack {
-                                    Text(recording.lastPathComponent)
-                                    Spacer()
-                                    Image(systemName: "play.circle")
-                                }
-                            }
-                        }
-                        .onDelete(perform: delete)
-                    }
+            ScrollView {
+                VStack {
+                    Text("recordings: \(audioRecorder.recordings.count)")
+                    ActionButton(audioRecorder: audioRecorder)
+                    Divider()
+                    QualityPicker(audioRecorder: audioRecorder)
+                    Divider()
+                    fileList
                 }
             }
-        }
-        .onAppear {
-            audioRecorder.setupAudioSession()
-            audioRecorder.fetchRecordings()
-        }
+            .onAppear {
+                audioRecorder.setupAudioSession()
+            }
+
 //        } else {
 //            Text("Recording permissions not granted. Please enable them in settings.")
 //        }
+    }
+
+    // MARK: - UI
+
+    var fileList: some View {
+            ForEach(audioRecorder.recordings, id: \.absoluteURL) { recording in
+                Button {
+                    audioRecorder.playRecording(url: recording)
+                } label: {
+                    HStack {
+                        Text(recording.lastPathComponent)
+                        Spacer()
+                        Image(systemName: "play.circle")
+                    }
+                }
+                .padding(.horizontal)
+
+            }
+            .onDelete(perform: delete)
     }
 
     func delete(at offsets: IndexSet) {

@@ -5,10 +5,12 @@
 //  Created by Péter Sanyó on 30.12.23.
 //
 
+import AVFoundation
 import SwiftUI
+import WatchKit
 
 struct ActionButton: View {
-    @EnvironmentObject var audioRecorder: AudioRecorder
+    @ObservedObject var audioRecorder: AudioRecorder
 
     var body: some View {
         Button {
@@ -54,7 +56,7 @@ struct ActionButton: View {
     }
 }
 
-#Preview {
-    ActionButton()
-        .environmentObject(AudioRecorder())
-}
+//#Preview {
+//    ActionButton()
+//        .environmentObject(AudioRecorder())
+//}

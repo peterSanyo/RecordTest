@@ -86,7 +86,9 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudi
     func stopRecording() {
         print("Stopping recording")
         if let url = audioRecorder?.url, audioRecorder?.isRecording == true {
-            recordings.append(url)  // Add the recording URL to the list
+            DispatchQueue.main.async {
+                self.recordings.append(url)  // Add the recording URL to the list
+            }
             print("Recording saved at \(url)")
         }
         audioRecorder?.stop()
@@ -125,7 +127,7 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudi
     
     // MARK: - Private Funcs
 
-    private func startTimer() {
+    func startTimer() {
         print("Starting timer")
         recordingTimer?.invalidate() // Invalidate any existing timer
         recordingTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
@@ -133,19 +135,19 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudi
         }
     }
 
-    private func stopTimer() {
+    func stopTimer() {
         print("Stopping timer")
         recordingTimer?.invalidate()
         recordingTimer = nil
         recordingTime = 0
     }
     
-    private func randomString(length: Int) -> String {
+    func randomString(length: Int) -> String {
         let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         return String((0..<length).map{ _ in letters.randomElement()! })
     }
 
-    private func getDocumentsDirectory() -> URL {
+    func getDocumentsDirectory() -> URL {
         let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         print("Documents directory: \(path)")
         return path
