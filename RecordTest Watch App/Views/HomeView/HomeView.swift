@@ -10,41 +10,45 @@ import SwiftUI
 import WatchKit
 
 struct HomeView: View {
-    @StateObject var audioRecorder = AudioRecorder()
+    @EnvironmentObject var audioRecorder: AudioRecorder
 
     var body: some View {
+//        if audioRecorder.hasRecordingPermission {
         ScrollView {
             VStack {
-                //            if audioRecorder.hasRecordingPermission {
                 ActionButton()
                 Divider()
                 QualityPicker()
-                //            } else {
-                //                Text("Recording permissions not granted. Please enable them in settings.")
-                //            }
-
                 Divider()
-                
-                List {
-                    ForEach(audioRecorder.recordings, id: \.self) { recording in
-                        Button {
-                            audioRecorder.playRecording(url: recording)
-                        } label: {
-                            HStack {
-                                Text(recording.lastPathComponent)
-                                Spacer()
-                                Image(systemName: "play.circle")
+
+                if audioRecorder.recordings.isEmpty {
+                    Text("No recordings found")
+                        .foregroundColor(.secondary)
+                } else {
+                    List {
+                        ForEach(audioRecorder.recordings, id: \.self) { recording in
+                            Button {
+                                audioRecorder.playRecording(url: recording)
+                            } label: {
+                                HStack {
+                                    Text(recording.lastPathComponent)
+                                    Spacer()
+                                    Image(systemName: "play.circle")
+                                }
                             }
                         }
+                        .onDelete(perform: delete)
                     }
-                    .onDelete(perform: delete)
                 }
             }
         }
-        .navigationTitle("Record")
         .onAppear {
             audioRecorder.setupAudioSession()
+            audioRecorder.fetchRecordings()
         }
+//        } else {
+//            Text("Recording permissions not granted. Please enable them in settings.")
+//        }
     }
 
     func delete(at offsets: IndexSet) {
@@ -58,4 +62,5 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
+        .environmentObject(AudioRecorder())
 }

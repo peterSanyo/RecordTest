@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ActionButton: View {
-    @StateObject var audioRecorder = AudioRecorder()
+    @EnvironmentObject var audioRecorder: AudioRecorder
 
     var body: some View {
         Button {
@@ -20,6 +20,7 @@ struct ActionButton: View {
         } label: {
             ZStack {
                 actionShape
+                    .font(.system(size: 140))
                     .foregroundColor(.red)
                         
                 Text(audioRecorder.isRecording ? "Stop (\(Int(audioRecorder.recordingTime)))" : "Record")
@@ -55,4 +56,5 @@ struct ActionButton: View {
 
 #Preview {
     ActionButton()
+        .environmentObject(AudioRecorder())
 }

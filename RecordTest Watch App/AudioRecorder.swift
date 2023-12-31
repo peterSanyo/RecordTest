@@ -15,6 +15,7 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudi
     var audioPlayer: AVAudioPlayer?
     
     @Published var recordings: [URL] = []
+    
     @Published var hasRecordingPermission: Bool = false
     @Published var isRecording = false
     
@@ -31,10 +32,11 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudi
     }
 
     func fetchRecordings() {
-        print("Fetching recordings")
         let urls = try? FileManager.default.contentsOfDirectory(at: getDocumentsDirectory(), includingPropertiesForKeys: nil)
-        recordings = urls?.filter { $0.pathExtension == "m4a" } ?? []
-        print("Found \(recordings.count) recordings")
+        let filteredUrls = urls?.filter { $0.pathExtension == "m4a" }
+        print("All URLs: \(String(describing: urls))")
+        print("Filtered URLs: \(String(describing: filteredUrls))")
+        recordings = filteredUrls ?? []
     }
     
     func setupAudioSession() {
