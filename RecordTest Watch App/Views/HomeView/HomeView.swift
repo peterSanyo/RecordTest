@@ -16,7 +16,6 @@ struct HomeView: View {
 //        if audioRecorder.hasRecordingPermission {
             ScrollView {
                 VStack {
-                    Text("recordings: \(audioRecorder.recordings.count)")
                     ActionButton(audioRecorder: audioRecorder)
                     Divider()
                     QualityPicker(audioRecorder: audioRecorder)
@@ -27,7 +26,6 @@ struct HomeView: View {
             .onAppear {
                 audioRecorder.setupAudioSession()
             }
-
 //        } else {
 //            Text("Recording permissions not granted. Please enable them in settings.")
 //        }

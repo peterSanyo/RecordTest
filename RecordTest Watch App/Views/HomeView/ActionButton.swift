@@ -21,16 +21,18 @@ struct ActionButton: View {
             }
         } label: {
             ZStack {
+                Circle().strokeBorder(style: StrokeStyle(lineWidth: audioRecorder.isRecording ? 0 : 1))
+                
                 actionShape
-                    .font(.system(size: 140))
                     .foregroundColor(.red)
-                        
+                    .padding()
+                
                 Text(audioRecorder.isRecording ? "Stop (\(Int(audioRecorder.recordingTime)))" : "Record")
                     .bold()
             }
         }
         .buttonStyle(PlainButtonStyle())
-        .padding(20)
+        .frame(maxWidth: 100)
     }
     
     // MARK: - UI
@@ -38,9 +40,9 @@ struct ActionButton: View {
     var actionShape: some View {
         Group {
             if audioRecorder.isRecording {
-                Image(systemName: "square.fill")                    
+                Rectangle()
             } else {
-                Image(systemName: "largecircle.fill.circle")
+                Circle()
             }
         }
     }
