@@ -13,7 +13,7 @@ struct HomeView: View {
     @StateObject var audioRecorder = AudioRecorder()
 
     var body: some View {
-//        if audioRecorder.hasRecordingPermission {
+        if audioRecorder.hasRecordingPermission {
             ScrollView {
                 VStack {
                     ActionButton(audioRecorder: audioRecorder)
@@ -26,9 +26,9 @@ struct HomeView: View {
             .onAppear {
                 audioRecorder.setupAudioSession()
             }
-//        } else {
-//            Text("Recording permissions not granted. Please enable them in settings.")
-//        }
+        } else {
+            Text("Recording permissions not granted. Please enable them in settings.")
+        }
     }
 
     // MARK: - UI
