@@ -33,14 +33,16 @@ struct RecorderWidgetProvider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (RecordingEntry) -> ()) {
-        let entry = RecordingEntry(date: Date(), recordings: []) // Fetch recordings here
+        let audioRecorder = AudioRecorder()
+        audioRecorder.fetchRecordings()  // Fetch the latest recordings
+        let entry = RecordingEntry(date: Date(), recordings: audioRecorder.recordings)
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<RecordingEntry>) -> ()) {
-        var entries: [RecordingEntry] = []
-
-        // Fetch recordings and create timeline entries
+        let audioRecorder = AudioRecorder()
+        audioRecorder.fetchRecordings()  // Fetch the latest recordings
+        let entries = [RecordingEntry(date: Date(), recordings: audioRecorder.recordings)]
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
@@ -54,6 +56,7 @@ struct RecorderWidgetProvider: TimelineProvider {
 
 struct RecorderWidgetEntryView: View {
     @Environment(\.widgetFamily) var widgetFamily
+    var recordings: [URL]
     var entry: RecorderWidgetProvider.Entry
 
     var body: some View {
@@ -84,10 +87,10 @@ struct RecorderWidget: Widget {
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: RecorderWidgetProvider()) { entry in
-            RecorderWidgetEntryView(entry: entry)
+            RecorderWidgetEntryView(recordings: entry.recordings, entry: entry)
         }
-        .configurationDisplayName("Audio Recorder Widget")
-        .description("Shows recent recordings.")
+        .configurationDisplayName("Recordings Count")
+        .description("Shows amount of recorded files.")
         .supportedFamilies([.accessoryCircular, .accessoryCorner, .accessoryInline, .accessoryRectangular])
     }
 }
