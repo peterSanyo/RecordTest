@@ -13,10 +13,26 @@ struct CircularComplicationView: View {
 
     var body: some View {
         ZStack {
+            // Define the gradient
+            let gradient = LinearGradient(
+                gradient: Gradient(stops: [
+                    .init(color: .clear, location: 0.5),
+                    .init(color: .white.opacity(0.3), location: 0.7),
+                    .init(color: .white, location: 1)
+                ]),
+                startPoint: .bottomTrailing,
+                endPoint: .topLeading
+            )
+
             Circle()
-                .strokeBorder(style: StrokeStyle(lineWidth: 3))
+                .strokeBorder(lineWidth: 1)
+
+            Circle()
+                .mask(gradient)
+
             Text("\(recordings.count)")
         }
+        .widgetAccentable()
         .containerBackground(for: .widget) {
             Color.clear
         }
