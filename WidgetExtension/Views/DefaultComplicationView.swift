@@ -12,7 +12,8 @@ struct DefaultComplicationView: View {
     var recordings: [URL]
 
     var body: some View {
-            Text("Recordings: \(recordings.count)")
+        Text("Recordings: \(recordings.count)")
+            .containerBackground(for: .widget) { Color.clear }
     }
 }
 
