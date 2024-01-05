@@ -73,6 +73,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4531A72A2B48A8F500A33C58 /* RecordTest Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RecordTest Watch App.entitlements"; sourceTree = "<group>"; };
+		4531A72B2B48ABF100A33C58 /* WidgetExtensionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExtensionExtension.entitlements; sourceTree = "<group>"; };
 		4546F46A2B40CCAC00F36B3A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4546F46C2B40CD2B00F36B3A /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		4546F4702B40D69900F36B3A /* QualityPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualityPicker.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		45DEBE502B3F727100003B71 = {
 			isa = PBXGroup;
 			children = (
+				4531A72B2B48ABF100A33C58 /* WidgetExtensionExtension.entitlements */,
 				45DEBE612B3F727100003B71 /* RecordTest Watch App */,
 				45C84AE02B48020000F344B7 /* WidgetExtension */,
 				45C84ADB2B48020000F344B7 /* Frameworks */,
@@ -193,6 +196,7 @@
 		45DEBE612B3F727100003B71 /* RecordTest Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				4531A72A2B48A8F500A33C58 /* RecordTest Watch App.entitlements */,
 				45DEBE622B3F727100003B71 /* RecordTestApp.swift */,
 				45DEBE642B3F727100003B71 /* ContentView.swift */,
 				4546F46E2B40CD4E00F36B3A /* Views */,
@@ -385,6 +389,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WidgetExtensionExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S98C3BL8SB;
@@ -415,6 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WidgetExtensionExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S98C3BL8SB;
@@ -565,6 +571,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "RecordTest Watch App/RecordTest Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecordTest Watch App/Preview Content\"";
@@ -596,6 +603,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "RecordTest Watch App/RecordTest Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecordTest Watch App/Preview Content\"";

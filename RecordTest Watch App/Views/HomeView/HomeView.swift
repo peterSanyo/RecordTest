@@ -34,6 +34,8 @@ struct HomeView: View {
     // MARK: - UI
 
     var fileList: some View {
+        Group {
+            Text("\(audioRecorder.recordings.count)")
             ForEach(audioRecorder.recordings, id: \.absoluteURL) { recording in
                 Button {
                     audioRecorder.playRecording(url: recording)
@@ -45,9 +47,10 @@ struct HomeView: View {
                     }
                 }
                 .padding(.horizontal)
-
+                
             }
             .onDelete(perform: delete)
+        }
     }
 
     func delete(at offsets: IndexSet) {

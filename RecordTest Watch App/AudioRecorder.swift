@@ -6,8 +6,9 @@
 //
 
 import AVFoundation
-import WatchKit
 import SwiftUI
+import WatchKit
+import WidgetKit
 
 final class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     var audioRecorder: AVAudioRecorder?
@@ -24,7 +25,11 @@ final class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, 
     
     @Published var selectedQuality = AVAudioQuality.high.rawValue
     
+    let appGroupUserDefaults: UserDefaults?
+
+    
     override init() {
+        appGroupUserDefaults = UserDefaults(suiteName: "group.PeterSanyo.RecordTest")
         super.init()
         print("Initializing AudioRecorder")
         setupAudioSession()
@@ -34,10 +39,19 @@ final class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, 
     func fetchRecordings() {
         let urls = try? FileManager.default.contentsOfDirectory(at: getDocumentsDirectory(), includingPropertiesForKeys: nil)
         let filteredUrls = urls?.filter { $0.pathExtension == "m4a" }
-        print("All URLs: \(String(describing: urls))")
-        print("Filtered URLs: \(String(describing: filteredUrls))")
-        recordings = filteredUrls ?? []
+        DispatchQueue.main.async {
+            self.recordings = filteredUrls ?? []
+            
+            // Use the shared UserDefaults
+            self.appGroupUserDefaults?.set(self.recordings.map { $0.absoluteString }, forKey: "recordingsURLs")
+            if let savedURLs = self.appGroupUserDefaults?.array(forKey: "recordingsURLs") as? [String] {
+                print("Saved URLs: \(savedURLs)")
+            } else {
+                print("Failed to retrieve saved URLs")
+            }
+        }
     }
+
     
     func setupAudioSession() {
         print("Setting up audio session")
@@ -86,18 +100,23 @@ final class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, 
     func stopRecording() {
         print("Stopping recording")
         if let url = audioRecorder?.url, audioRecorder?.isRecording == true {
+                DispatchQueue.main.async {
+                    self.recordings.append(url)  // Add the recording URL to the list
+                    self.appGroupUserDefaults?.set(self.recordings.map { $0.absoluteString }, forKey: "recordingsURLs")
+                }
+                print("Recording saved at \(url)")
+            }
+            audioRecorder?.stop()
             DispatchQueue.main.async {
-                self.recordings.append(url)  // Add the recording URL to the list
+                withAnimation {
+                    self.isRecording = false
+                }
             }
-            print("Recording saved at \(url)")
-        }
-        audioRecorder?.stop()
-        DispatchQueue.main.async {
-            withAnimation {
-                self.isRecording = false
-            }
-        }
-        stopTimer()
+            stopTimer()
+            
+            // Request the widget to update immediately after saving the new data
+            WidgetCenter.shared.reloadAllTimelines()
+
     }
     
     func playRecording(url: URL) {
