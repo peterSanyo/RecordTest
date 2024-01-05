@@ -47,6 +47,7 @@ struct RecorderWidgetProvider: TimelineProvider {
 }
 
 // MARK: - WidgetEntryView
+
 // This is the SwiftUI view that defines the UI of your widget. It uses the data from RecordingEntry to build the interface that users will see.
 // It uses the @Environment property wrapper to adapt its layout based on the complication family being used (such as .accessoryCircular, .accessoryCorner, etc.).
 // Inside this view, you would typically switch on the widgetFamily to provide different layouts for different complication sizes and shapes.
@@ -64,6 +65,13 @@ struct RecorderWidgetEntryView: View {
         }
     }
 }
+// MARK: - Main Entry Point
+
+// This is the main entry point of your widget extension. It defines the overall configuration of your widget.
+// It uses StaticConfiguration to set up a non-configurable widget that doesn't rely on user-selected options.
+// It sets the kind, which is a unique identifier for the widget, used by the system to differentiate it from other widgets.
+// The configurationDisplayName and description provide the name and description that appear in the widget gallery.
+// The supportedFamilies array tells WidgetKit which complication families your widget supports.
 
 @main
 struct RecorderWidget: Widget {

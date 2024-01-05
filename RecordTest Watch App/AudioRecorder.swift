@@ -9,7 +9,7 @@ import AVFoundation
 import WatchKit
 import SwiftUI
 
-class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+final class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     var audioRecorder: AVAudioRecorder?
     let audioSession = AVAudioSession.sharedInstance()
     var audioPlayer: AVAudioPlayer?
