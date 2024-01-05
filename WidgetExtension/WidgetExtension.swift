@@ -57,11 +57,16 @@ struct RecorderWidgetEntryView: View {
     var entry: RecorderWidgetProvider.Entry
 
     var body: some View {
-        VStack {
-            ForEach(entry.recordings, id: \.self) { recording in
-                Text(recording.lastPathComponent)
-                // Design your widget view here
-            }
+        switch widgetFamily {
+        case .accessoryInline:
+            // layout for inline complication
+            InlineComplicationView(recordings: entry.recordings)
+        case .accessoryCircular:
+            // layout for circular complication
+            CircularComplicationView(recordings: entry.recordings)
+        default:
+            // default layout
+            DefaultComplicationView(recordings: entry.recordings)
         }
     }
 }

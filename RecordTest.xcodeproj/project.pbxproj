@@ -18,6 +18,10 @@
 		45C84AED2B48021900F344B7 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEBE742B3F72F900003B71 /* AudioRecorder.swift */; };
 		45C84AF02B4819AC00F344B7 /* InlineComplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C84AEF2B4819AC00F344B7 /* InlineComplicationView.swift */; };
 		45C84AF12B481BC400F344B7 /* InlineComplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C84AEF2B4819AC00F344B7 /* InlineComplicationView.swift */; };
+		45C84AF32B48218700F344B7 /* CircularComplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C84AF22B48218700F344B7 /* CircularComplicationView.swift */; };
+		45C84AF52B4821EF00F344B7 /* DefaultComplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C84AF42B4821EF00F344B7 /* DefaultComplicationView.swift */; };
+		45C84AF62B4821EF00F344B7 /* DefaultComplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C84AF42B4821EF00F344B7 /* DefaultComplicationView.swift */; };
+		45C84AF72B4821F600F344B7 /* CircularComplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C84AF22B48218700F344B7 /* CircularComplicationView.swift */; };
 		45DEBE5E2B3F727100003B71 /* RecordTest Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 45DEBE5D2B3F727100003B71 /* RecordTest Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		45DEBE632B3F727100003B71 /* RecordTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEBE622B3F727100003B71 /* RecordTestApp.swift */; };
 		45DEBE652B3F727100003B71 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEBE642B3F727100003B71 /* ContentView.swift */; };
@@ -79,6 +83,8 @@
 		45C84AE32B48020100F344B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45C84AE52B48020100F344B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45C84AEF2B4819AC00F344B7 /* InlineComplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineComplicationView.swift; sourceTree = "<group>"; };
+		45C84AF22B48218700F344B7 /* CircularComplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularComplicationView.swift; sourceTree = "<group>"; };
+		45C84AF42B4821EF00F344B7 /* DefaultComplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultComplicationView.swift; sourceTree = "<group>"; };
 		45DEBE572B3F727100003B71 /* RecordTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DEBE5D2B3F727100003B71 /* RecordTest Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RecordTest Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DEBE622B3F727100003B71 /* RecordTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTestApp.swift; sourceTree = "<group>"; };
@@ -158,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				45C84AEF2B4819AC00F344B7 /* InlineComplicationView.swift */,
+				45C84AF22B48218700F344B7 /* CircularComplicationView.swift */,
+				45C84AF42B4821EF00F344B7 /* DefaultComplicationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -334,6 +342,8 @@
 			files = (
 				45C84AF12B481BC400F344B7 /* InlineComplicationView.swift in Sources */,
 				45C84AED2B48021900F344B7 /* AudioRecorder.swift in Sources */,
+				45C84AF72B4821F600F344B7 /* CircularComplicationView.swift in Sources */,
+				45C84AF62B4821EF00F344B7 /* DefaultComplicationView.swift in Sources */,
 				45C84AE22B48020000F344B7 /* WidgetExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,6 +355,8 @@
 				45DEBE752B3F72F900003B71 /* AudioRecorder.swift in Sources */,
 				4546F46B2B40CCAC00F36B3A /* HomeView.swift in Sources */,
 				45DEBE652B3F727100003B71 /* ContentView.swift in Sources */,
+				45C84AF52B4821EF00F344B7 /* DefaultComplicationView.swift in Sources */,
+				45C84AF32B48218700F344B7 /* CircularComplicationView.swift in Sources */,
 				4546F4712B40D69900F36B3A /* QualityPicker.swift in Sources */,
 				45C84AF02B4819AC00F344B7 /* InlineComplicationView.swift in Sources */,
 				45DEBE632B3F727100003B71 /* RecordTestApp.swift in Sources */,
