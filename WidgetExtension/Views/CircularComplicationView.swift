@@ -5,20 +5,23 @@
 //  Created by Péter Sanyó on 05.01.24.
 //
 
-import WidgetKit
 import SwiftUI
+import WidgetKit
 
 struct CircularComplicationView: View {
     var recordings: [URL]
 
     var body: some View {
         ZStack {
-            Circle().stroke()
+            Circle()
+                .strokeBorder(style: StrokeStyle(lineWidth: 3))
             Text("\(recordings.count)")
+        }
+        .containerBackground(for: .widget) {
+            Color.clear
         }
     }
 }
-
 
 struct CircularComplicationView_Previews: PreviewProvider {
     static var previews: some View {
