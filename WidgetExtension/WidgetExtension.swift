@@ -89,7 +89,7 @@ struct RecorderWidgetEntryView: View {
             InlineComplicationView(recordings: entry.recordings)
         case .accessoryCircular:
             // layout for circular complication
-            CircularComplicationView(recordings: entry.recordings)
+            CircularComplicationView(recordings: entry.recordings); CircularRecordComplication()
         default:
             // default layout
             DefaultComplicationView(recordings: entry.recordings)

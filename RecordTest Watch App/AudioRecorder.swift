@@ -95,6 +95,10 @@ final class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, 
             print("Could not start recording: \(error)")
         }
         startTimer()
+        
+        // widget update
+        appGroupUserDefaults?.set(true, forKey: "isRecording")
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     func stopRecording() {
@@ -113,10 +117,9 @@ final class AudioRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, 
                 }
             }
             stopTimer()
-            
-            // Request the widget to update immediately after saving the new data
-            WidgetCenter.shared.reloadAllTimelines()
-
+        
+        appGroupUserDefaults?.set(false, forKey: "isRecording")
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     func playRecording(url: URL) {
