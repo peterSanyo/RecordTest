@@ -22,7 +22,7 @@ struct DefaultComplicationView_Previews: PreviewProvider {
         let mockRecordings = (1 ... 12).map { _ in URL(fileURLWithPath: "path/to/recording.m4a") }
 
         DefaultComplicationView(recordings: mockRecordings)
-            .previewContext(WidgetPreviewContext(family: .accessoryInline))
+            .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
             .previewDisplayName("Accessory Inline")
     }
 }
