@@ -10,29 +10,29 @@ import WidgetKit
 
 struct CircularComplicationView: View {
     var recordings: [URL]
+    @State private var gradientAnimation = 0.9
 
     var body: some View {
         ZStack {
-            // Define the gradient
             let gradient = LinearGradient(
-                gradient: Gradient(stops: [
-                    .init(color: .clear, location: 0.5),
-                    .init(color: .white.opacity(0.3), location: 0.7),
-                    .init(color: .white, location: 1)
-                ]),
+                gradient: Gradient(
+                    stops: [
+                    .init(color: .clear, location: 0),
+                    .init(color: .white.opacity(0.3), location: gradientAnimation),
+                    .init(color: .black, location: 1)]
+                ),
                 startPoint: .bottomTrailing,
                 endPoint: .topLeading
             )
-
-            Circle()
-                .strokeBorder(lineWidth: 1)
-
+            
             Circle()
                 .mask(gradient)
+                .overlay(Circle().stroke(lineWidth: 2))
+                .widgetAccentable()
 
             Text("\(recordings.count)")
+                .bold()
         }
-        .widgetAccentable()
         .containerBackground(for: .widget) {
             Color.clear
         }

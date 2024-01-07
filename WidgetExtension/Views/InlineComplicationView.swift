@@ -12,7 +12,7 @@ struct InlineComplicationView: View {
     var recordings: [URL]
     var body: some View {
         Text("Recordings: \(recordings.count)")
-            .containerBackground(for: .widget) { Color.clear }
+            .widgetAccentable()
     }
 }
 
