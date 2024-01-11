@@ -10,34 +10,39 @@ import WidgetKit
 
 struct CircularComplicationView: View {
     var recordings: [URL]
+    @Environment(\.showsWidgetLabel) var showsWidgetLabel
 
     var body: some View {
+        let recCount = recordings.count
         ZStack {
-            Circle()
-                .mask(gradient)
-                .overlay(Circle().stroke(lineWidth: 2))
-                .widgetAccentable()
+            if showsWidgetLabel {
+                ZStack {
+                    Circle()
+                        .mask(CustomGradient.customGradient)
+                        .overlay(Circle().stroke(lineWidth: 2))
+                        .widgetAccentable()
 
-            Text("\(recordings.count)")
-                .bold()
+                    Text("\(recCount)")
+                        .bold()
+                }
+                .widgetLabel {
+                    Text("Recordings: \(recCount) ")
+                }
+            } else {
+                Gauge(value: Float(recCount)) {
+                    Image(systemName: "mic")
+                        .resizable()
+                        .scaledToFit()
+                } currentValueLabel: {
+                    Text("\(recordings.count)")
+                }
+                .gaugeStyle(.circular)
+            }
         }
         .containerBackground(for: .widget) {
             Color.clear
         }
-        .widgetLabel {
-            Text("Recordings: \(recordings.count) ")
-        }
     }
-    let gradient = LinearGradient(
-        gradient: Gradient(
-            stops: [
-                .init(color: .clear, location: 0.2),
-            .init(color: .white.opacity(0.3), location: 0.7),
-                .init(color: .black, location: 1)]
-        ),
-        startPoint: .bottomTrailing,
-        endPoint: .topLeading
-    )
 }
 
 struct CircularComplicationView_Previews: PreviewProvider {

@@ -12,6 +12,7 @@ struct CornerComplicationView: View {
     var recordings: [URL]
 
     var body: some View {
+        let recCount = recordings.count
         ZStack {
             Image(systemName: "mic")
                 .resizable()
@@ -21,7 +22,7 @@ struct CornerComplicationView: View {
             Color.clear
         }
         .widgetLabel {
-            Text("Recordings: \(recordings.count)")
+            Text("Recordings: \(recCount)")
         }
     }
 }
