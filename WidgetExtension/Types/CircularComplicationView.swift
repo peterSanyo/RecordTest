@@ -24,6 +24,9 @@ struct CircularComplicationView: View {
         .containerBackground(for: .widget) {
             Color.clear
         }
+        .widgetLabel {
+            Text("Recordings: \(recordings.count) ")
+        }
     }
     let gradient = LinearGradient(
         gradient: Gradient(

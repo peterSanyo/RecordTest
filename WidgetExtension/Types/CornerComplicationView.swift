@@ -9,11 +9,20 @@ import SwiftUI
 import WidgetKit
 
 struct CornerComplicationView: View {
-
     var recordings: [URL]
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Image(systemName: "mic")
+                .resizable()
+                .scaledToFit()
+        }
+        .containerBackground(for: .widget) {
+            Color.clear
+        }
+        .widgetLabel {
+            Text("Recordings: \(recordings.count)")
+        }
     }
 }
 
