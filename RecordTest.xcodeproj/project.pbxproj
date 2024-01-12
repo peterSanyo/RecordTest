@@ -20,6 +20,8 @@
 		455E0B982B509D2A00813E82 /* CornerComplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E0B962B509D2A00813E82 /* CornerComplicationView.swift */; };
 		455E0B9A2B50A76C00813E82 /* ColorGradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E0B992B50A76C00813E82 /* ColorGradients.swift */; };
 		455E0B9B2B50A76C00813E82 /* ColorGradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E0B992B50A76C00813E82 /* ColorGradients.swift */; };
+		455E0B9E2B50B6AD00813E82 /* RectangularComplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E0B9D2B50B6AD00813E82 /* RectangularComplicationView.swift */; };
+		455E0B9F2B50B6AD00813E82 /* RectangularComplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E0B9D2B50B6AD00813E82 /* RectangularComplicationView.swift */; };
 		45C84ADD2B48020000F344B7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C84ADC2B48020000F344B7 /* WidgetKit.framework */; };
 		45C84ADF2B48020000F344B7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C84ADE2B48020000F344B7 /* SwiftUI.framework */; };
 		45C84AE22B48020000F344B7 /* RecordCountWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C84AE12B48020000F344B7 /* RecordCountWidget.swift */; };
@@ -93,6 +95,7 @@
 		4546F4702B40D69900F36B3A /* QualityPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualityPicker.swift; sourceTree = "<group>"; };
 		455E0B962B509D2A00813E82 /* CornerComplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerComplicationView.swift; sourceTree = "<group>"; };
 		455E0B992B50A76C00813E82 /* ColorGradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGradients.swift; sourceTree = "<group>"; };
+		455E0B9D2B50B6AD00813E82 /* RectangularComplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangularComplicationView.swift; sourceTree = "<group>"; };
 		45C84ADA2B48020000F344B7 /* WidgetExtensionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetExtensionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C84ADC2B48020000F344B7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		45C84ADE2B48020000F344B7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -137,6 +140,7 @@
 				45C84AEF2B4819AC00F344B7 /* InlineComplicationView.swift */,
 				455E0B962B509D2A00813E82 /* CornerComplicationView.swift */,
 				45C84AF22B48218700F344B7 /* CircularComplicationView.swift */,
+				455E0B9D2B50B6AD00813E82 /* RectangularComplicationView.swift */,
 				45C84AF42B4821EF00F344B7 /* DefaultComplicationView.swift */,
 			);
 			path = Types;
@@ -404,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				455E0B9F2B50B6AD00813E82 /* RectangularComplicationView.swift in Sources */,
 				45C84AF12B481BC400F344B7 /* InlineComplicationView.swift in Sources */,
 				45C84AED2B48021900F344B7 /* AudioRecorder.swift in Sources */,
 				4531A73D2B4B63E700A33C58 /* RecordingEntry.swift in Sources */,
@@ -424,6 +429,7 @@
 				45DEBE752B3F72F900003B71 /* AudioRecorder.swift in Sources */,
 				4546F46B2B40CCAC00F36B3A /* HomeView.swift in Sources */,
 				45DEBE652B3F727100003B71 /* ContentView.swift in Sources */,
+				455E0B9E2B50B6AD00813E82 /* RectangularComplicationView.swift in Sources */,
 				45C84AF52B4821EF00F344B7 /* DefaultComplicationView.swift in Sources */,
 				4531A73F2B4B642600A33C58 /* RecordCountProvider.swift in Sources */,
 				45C84AF32B48218700F344B7 /* CircularComplicationView.swift in Sources */,

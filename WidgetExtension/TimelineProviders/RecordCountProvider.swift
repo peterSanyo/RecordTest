@@ -4,7 +4,7 @@
 //
 //  Created by Péter Sanyó on 07.01.24.
 //
-
+import SwiftUI
 import WidgetKit
 
 // This is the 'factory' that creates the timeline entries for your widget. As a TimelineProvider, it's responsible for telling WidgetKit what to display and when.
@@ -25,10 +25,12 @@ struct RecordCountProvider: TimelineProvider {
     func getSnapshot(in context: Context, completion: @escaping (RecordingEntry) -> ()) {
         // Use the shared UserDefaults
         if let recordingURLs = appGroupUserDefaults?.object(forKey: "recordingsURLs") as? [String] {
-            let urls = recordingURLs.compactMap { URL(string: $0) }
-            print("Retrieved URLs in Widget Snapshot: \(urls)")
-            let entry = RecordingEntry(date: Date(), recordings: urls)
-            completion(entry)
+            withAnimation {
+                let urls = recordingURLs.compactMap { URL(string: $0) }
+                print("Retrieved URLs in Widget Snapshot: \(urls)")
+                let entry = RecordingEntry(date: Date(), recordings: urls)
+                completion(entry)
+            }
         } else {
             print("No URLs found in Widget Snapshot")
             let entry = RecordingEntry(date: Date(), recordings: [])

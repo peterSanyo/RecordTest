@@ -27,6 +27,8 @@ struct RecordCountEntryView: View {
             CircularComplicationView(recordings: entry.recordings)
         case .accessoryCorner:
             CornerComplicationView(recordings: entry.recordings)
+        case .accessoryRectangular:
+            RectangularComplicationView(recordings: entry.recordings)
         default:
             // default layout
             DefaultComplicationView(recordings: entry.recordings)
