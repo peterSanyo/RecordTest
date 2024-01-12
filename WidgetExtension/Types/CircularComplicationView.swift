@@ -11,6 +11,7 @@ import WidgetKit
 struct CircularComplicationView: View {
     var recordings: [URL]
     @Environment(\.showsWidgetLabel) var showsWidgetLabel
+    let maxRecordingsCount = 100
 
     var body: some View {
         let recCount = recordings.count
@@ -29,7 +30,10 @@ struct CircularComplicationView: View {
                     Text("Recordings: \(recCount) ")
                 }
             } else {
-                Gauge(value: Float(recCount)) {
+                let normalizedValue = Float(recordings.count) / Float(maxRecordingsCount)
+                let clampedValue = min(1.0, max(0.0, normalizedValue))
+
+                Gauge(value: clampedValue) {
                     Image(systemName: "mic")
                         .resizable()
                         .scaledToFit()
