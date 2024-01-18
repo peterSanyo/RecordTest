@@ -11,8 +11,12 @@ import WidgetKit
 struct InlineComplicationView: View {
     var recordings: [URL]
     var body: some View {
-        Text("Recordings: \(recordings.count)")
+        HStack {
+            Image(systemName: "mic")
+
+            Text("Recordings: \(recordings.count)")
             .widgetAccentable()
+        }
     }
 }
 
